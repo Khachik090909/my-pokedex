@@ -1,16 +1,18 @@
 import propTyypes from 'prop-types';
 
 function PokemonCard({pokemon}) {
- console.log(pokemon);
-  
+
   return(
-   
-   <div>
-    <figure><img src={pokemon.imgSrc} alt="Bulbasaur" /></figure>,
+    pokemon.imgSrc !== undefined
+    ? 
+   (<div>
+    <figure><img src={pokemon.imgSrc} alt="" /></figure>,
     <figcaption>{pokemon.name}</figcaption>
     </div>
-    
+    ) : <p>????</p>
   )
+    
+  
  
   }
   PokemonCard.propTypes = {
