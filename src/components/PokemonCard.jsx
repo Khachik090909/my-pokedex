@@ -3,10 +3,9 @@ import propTyypes from 'prop-types';
 function PokemonCard({pokemon}) {
 
   return(
-    pokemon.imgSrc !== undefined
-    ? 
+    pokemon.imgSrc ?
    (<div>
-    <figure><img src={pokemon.imgSrc} alt="" /></figure>,
+    <figure><img src={pokemon.imgSrc} alt="" /></figure>
     <figcaption>{pokemon.name}</figcaption>
     </div>
     ) : <p>????</p>
@@ -18,8 +17,8 @@ function PokemonCard({pokemon}) {
   PokemonCard.propTypes = {
     pokemon: propTyypes.shape({
       name: propTyypes.string.isRequired,
-      imgSrc: propTyypes.string.isRequired,
-    }),
+      imgSrc: propTyypes.string,
+    }).isRequired ,
   };
 
   
